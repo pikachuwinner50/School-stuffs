@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    
+
+        <style>
+        .card {
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+            box-shadow: 
+            0 1px 2px rgba(0,0,0,0.05),
+            0 4px 6px rgba(0,0,0,0.05),
+            0 10px 20px rgba(0,0,0,0.05);
+
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+
+        h1 {
+            color: aqua;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: radial-gradient(circle at center, #fff 0%, #000 100%);
+        }
+        .fade { 
+            opacity: 0.5; 
+        } /* Still clickable, takes space */
+        .hidden { 
+            visibility: hidden; 
+        } /* Invisible but takes space */
+        .gone { 
+            display: none; 
+        } /* Removed from flow */
+
+        button {
+            background: rgb(0, 255, 13);
+            transition: 0.3s ease;
+        }
+        button:hover {
+            background: rgba(240, 4, 228, 0.753);
+        }
+
+        .box {
+            transform: translate(50px, 100px); /* Move */
+            transform: rotate(45deg);/* Rotate */
+            transform: scale(1.5);/* Grow */
+            transform: skew(10deg, 5deg); /* Slant */
+             transform-origin: top left;/* */
+             transform: rotate(45deg); /**/
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            isolation: isolate;
+        }
+
+        body::before {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            width: 200vmax;
+            height: 200vmax;
+            content: "";
+            background: conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
+            animation: background-rotate 30s linear infinite;
+        }
+
+        @keyframes background-rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body::before { animation: none; }
+        }
+            </style>
+
+    </head>
+
+    <body>
+        <div class="card">
+            <h1>Hey</h1>
+            <p>Words</p>
+        </div>
+        <button> bUTTON</button>
+        <div class="box">
+            <p>Heyo</p>
+        </div>
+
+        <div class="cone">
+            <p>PAIN</p>
+        </div>
+    </body>
+</html>
